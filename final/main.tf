@@ -1,6 +1,6 @@
 provider "aws" {
   region = "us-east-1"  
-  profile = "ostad5"
+  profile = "DevOpsManager"
 }
 
 
@@ -11,7 +11,7 @@ resource "tls_private_key" "ansible_key" {
 
 resource "local_file" "private_key" {
   content  = tls_private_key.ansible_key.private_key_pem
-  filename = "${path.module}/ansible_key.pem"
+  filename = "${path.module}/ansible_key_200098000.pem"
 }
 
 resource "aws_key_pair" "ansible_key" {
